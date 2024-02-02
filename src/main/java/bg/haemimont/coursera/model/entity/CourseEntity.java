@@ -38,6 +38,4 @@ public class CourseEntity extends BaseEntity {
     @Column(nullable = false)
     private LocalDateTime timeCreated;
 
-    @ManyToMany
-    private List<StudentsEntity> studentPin;
 }
