@@ -35,4 +35,4 @@ The cycle is symple. There are commands that runs different actions. I've only s
 I will create the comand that recives all input at ones (FROM THE TASK REQUIREMENTS) and then display the data in HTML table (USING THYMELEAF) and in CSV format using custom class for writing the data in CSV format.
 I'm going to use aproach that I already used in one of my project that was a whole logging proces for whole E-commerse store. 
 Where Every action was logged in file and displayed in live time inside the admin administration.
-(I will be happy to show you this project. It will show you my understanding in the web develompent and RESTful API's.)
+(I'll be happy to show you this project. It will show you my understanding in the web develompent and RESTful API's.)
