@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -17,16 +16,17 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "students")
-public class StudentsEntity {
+public class StudentEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Length(max = 10)
     private int pin;
 
+    @Size(max = 50)
     @Column(nullable = false)
     private String firstName;
 
+    @Size(max = 50)
     @Column(nullable = false)
     private String lastName;
 

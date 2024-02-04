@@ -18,11 +18,13 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "instructors")
-public class InstructorsEntity extends BaseEntity {
+public class InstructorEntity extends BaseEntity {
 
+    @Size(max = 100)
     @Column(nullable = false)
     private String firstName;
 
+    @Size(max = 100)
     @Column(nullable = false)
     private String lastName;
 

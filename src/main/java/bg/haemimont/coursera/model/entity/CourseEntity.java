@@ -22,7 +22,7 @@ import java.util.List;
 @Table(name = "courses")
 public class CourseEntity extends BaseEntity {
 
-    @Size(max = 100)
+    @Size(max = 150)
     @Column(nullable = false)
     private String name;
 
