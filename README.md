@@ -28,7 +28,7 @@ My application follows MVC pattern but instead of displaying results in web and 
 *** The methods are written simply to show the user/backend cycle. 
     If this needs to be done more professionally, I would written them with way more validations and maybe consider better approaches for the dataprocesing.
 
-The cycle is symple. There are commands that runs different actions. I've only showed you the the process of validating and saving user input, there are many more actions that have to be includet in order to complete the application like this. For example editing data, deleting data, displayng data (!!!COMING IN THE NEXY UPDATE!!!) etc.
+The cycle is symple. There are commands that runs different actions. I've only showed you the the process of validating and saving user input, there are many more actions that have to be included in order to complete the application like this. For example editing data, deleting data, displayng data (!!!COMING IN THE NEXY UPDATE!!!) etc.
 
 # FOR NEXT UPDATE:
 
