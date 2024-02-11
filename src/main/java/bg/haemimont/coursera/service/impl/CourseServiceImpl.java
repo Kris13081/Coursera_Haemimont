@@ -2,7 +2,6 @@ package bg.haemimont.coursera.service.impl;
 
 import bg.haemimont.coursera.model.entity.CourseEntity;
 import bg.haemimont.coursera.model.entity.InstructorEntity;
-import bg.haemimont.coursera.model.entity.StudentEntity;
 import bg.haemimont.coursera.repository.CourseRepository;
 import bg.haemimont.coursera.service.CourseService;
 import bg.haemimont.coursera.service.InstructorService;
@@ -10,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
