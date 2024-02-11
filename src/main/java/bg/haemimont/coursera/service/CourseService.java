@@ -9,4 +9,5 @@ public interface CourseService {
 
     CourseEntity findCourse(String name);
 
+    String getInstructorName(int instructorId);
 }

@@ -72,4 +72,15 @@ public class CourseServiceImpl implements CourseService {
         return optionalCourse.orElse(null);
     }
 
+    @Override
+    public String getInstructorName(int instructorId) {
+
+        Optional<InstructorEntity> instructor = instructorService.findInstructor(instructorId);
+        if (instructor.isPresent()) {
+            return instructor.get().getFirstName() + " " + instructor.get().getLastName();
+        } else {
+            throw new IllegalArgumentException("Instructor with ID " + instructorId + " does not exist");
+        }
+    }
+
 }

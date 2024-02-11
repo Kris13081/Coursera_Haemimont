@@ -89,6 +89,15 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.findStudentsWithMoreThanMinCredits(minCredit);
     }
 
+    @Override
+    public int getTotalCreditForStudent(StudentEntity student) {
+
+        return student.getCourses().stream()
+                .mapToInt(CourseEntity::getCredit)
+                .sum();
+
+    }
+
     private List<String> courseNamesExtractor(String coursesLineInput) {
         return Arrays.stream(coursesLineInput.split(","))
                 .map(String::trim)

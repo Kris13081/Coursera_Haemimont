@@ -12,4 +12,8 @@ public interface StudentService {
     StudentEntity getStudentByPin(int pin);
 
     List<StudentEntity> getStudentsWithEnoughCredit(int minCredit);
+
+    int getTotalCreditForStudent(StudentEntity student);
 }
+
+
