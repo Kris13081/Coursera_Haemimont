@@ -2,6 +2,7 @@ package bg.haemimont.coursera.controller;
 
 import bg.haemimont.coursera.service.CourseService;
 import bg.haemimont.coursera.service.InstructorService;
+import bg.haemimont.coursera.service.ReportService;
 import bg.haemimont.coursera.service.StudentService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
@@ -14,14 +15,17 @@ public class InputController implements CommandLineRunner {
     private final StudentService studentService;
     private final InstructorService instructorService;
     private final CourseService courseService;
+    private final ReportService reportService;
     private final Scanner scanner;
 
     public InputController(StudentService studentService,
                            InstructorService instructorService,
-                           CourseService courseService) {
+                           CourseService courseService,
+                           ReportService reportService) {
         this.studentService = studentService;
         this.instructorService = instructorService;
         this.courseService = courseService;
+        this.reportService = reportService;
         this.scanner = new Scanner(System.in);
     }
 
@@ -49,12 +53,29 @@ public class InputController implements CommandLineRunner {
                 case "CC":
                     createCourse();
                     break;
+                case "CR":
+                    createReport();
+                    break;
+
             }
 
+            System.out.print("Enter command --> ");
             command = scanner.nextLine();
         }
 
     }
+
+    private void showInstructions() {
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.println("Available commands:");
+        System.out.println("CS - Create Student");
+        System.out.println("CI - Create Instructor");
+        System.out.println("CC - Create Course");
+        System.out.println("CR - Create Report");
+        System.out.println("$STOP - Exit the program");
+        System.out.println("-----------------------------------------------------------------------------");
+    }
+
     public void createStudent() {
         studentService.createStudent();
     }
@@ -67,13 +88,7 @@ public class InputController implements CommandLineRunner {
         courseService.createCourse();
     }
 
-    private void showInstructions() {
-        System.out.println("-----------------------------------------------------------------------------");
-        System.out.println("Available commands:");
-        System.out.println("CS - Create Student");
-        System.out.println("CI - Create Instructor");
-        System.out.println("CC - Create Course");
-        System.out.println("$STOP - Exit the program");
-        System.out.println("-----------------------------------------------------------------------------");
+    private void createReport() {
+        reportService.createReport();
     }
 }

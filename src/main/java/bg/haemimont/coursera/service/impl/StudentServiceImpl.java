@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -70,6 +67,26 @@ public class StudentServiceImpl implements StudentService {
 
         System.out.println("Student created successfully");
 
+    }
+
+    @Override
+    public boolean existOnNot(int pin) {
+
+        return studentRepository.existsByPin(pin);
+    }
+
+    @Override
+    public StudentEntity getStudentByPin(int pin) {
+
+        Optional<StudentEntity> optionalStudent =  studentRepository.getStudentEntityByPin(pin);
+
+        return optionalStudent.orElse(null);
+    }
+
+    @Override
+    public List<StudentEntity> getStudentsWithEnoughCredit(int minCredit) {
+
+        return studentRepository.findStudentsWithMoreThanMinCredits(minCredit);
     }
 
     private List<String> courseNamesExtractor(String coursesLineInput) {

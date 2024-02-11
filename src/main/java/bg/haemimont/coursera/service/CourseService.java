@@ -8,4 +8,5 @@ public interface CourseService {
     void createCourse();
 
     CourseEntity findCourse(String name);
+
 }
